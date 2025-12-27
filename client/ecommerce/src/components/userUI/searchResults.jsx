@@ -26,7 +26,7 @@ export default function SearchResults() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:8050/api/admin/products");
+      const res = await axios.get("https://api-ecommerce-2.onrender.com/api/admin/products");
       if (res.data.status && res.data.products) {
         setProducts(res.data.products);
       }

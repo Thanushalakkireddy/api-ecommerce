@@ -15,7 +15,7 @@ export default function EditCategories() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:8050/api/admin/viewCategory");
+      const res = await axios.get("http://api-ecommerce-2.onrender.com/api/admin/viewCategory");
       if (res.data.status && res.data.data) {
         setCategories(res.data.data);
       }
@@ -47,7 +47,7 @@ export default function EditCategories() {
 
     try {
       const response = await axios.patch(
-        `http://localhost:8050/api/admin/category/${editingCategory}`,
+        `http://api-ecommerce-2.onrender.com/api/admin/category/${editingCategory}`,
         { name: categoryName.trim() }
       );
 
@@ -72,7 +72,7 @@ export default function EditCategories() {
 
     try {
       const response = await axios.delete(
-        `http://localhost:8050/api/admin/categoryDelete/${categoryId}`
+        `http://api-ecommerce-2.onrender.com/api/admin/categoryDelete/${categoryId}`
       );
 
       if (response.data.status) {

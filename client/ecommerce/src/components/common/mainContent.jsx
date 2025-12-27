@@ -20,7 +20,7 @@ export default function MainContent() {
     setMessage(null);
 
     try {
-      const res = await axios.post(`http://localhost:8050/api/${role}/login`, {
+      const res = await axios.post(`https://api-ecommerce-2.onrender.com/api/${role}/login`, {
         email,
         pass, // send plain password
       });

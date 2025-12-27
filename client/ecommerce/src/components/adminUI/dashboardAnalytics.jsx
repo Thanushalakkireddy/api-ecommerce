@@ -19,9 +19,9 @@ export default function DashboardAnalytics() {
   const fetchDashboardData = async () => {
     try {
       const [productsRes, categoriesRes, usersRes] = await Promise.all([
-        axios.get("http://localhost:8050/api/admin/products"),
-        axios.get("http://localhost:8050/api/admin/viewCategory"),
-        axios.get("http://localhost:8050/api/admin/allUsers")
+        axios.get("http://api-ecommerce-2.onrender.com/api/admin/products"),
+        axios.get("http://api-ecommerce-2.onrender.com/api/admin/viewCategory"),
+        axios.get("http://api-ecommerce-2.onrender.com/api/admin/allUsers")
       ]);
 
       const products = productsRes.data.products || [];

@@ -36,7 +36,7 @@ export default function Checkout() {
   const fetchAddresses = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:8050/api/user/addresses", {
+      const res = await axios.get("https://api-ecommerce-2.onrender.com/api/user/addresses", {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -58,7 +58,7 @@ export default function Checkout() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:8050/api/user/addresses",
+        "https://api-ecommerce-2.onrender.com/api/user/addresses",
         newAddress,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -103,7 +103,7 @@ export default function Checkout() {
       };
 
       const res = await axios.post(
-        "http://localhost:8050/api/user/orders",
+        "https://api-ecommerce-2.onrender.com/api/user/orders",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );

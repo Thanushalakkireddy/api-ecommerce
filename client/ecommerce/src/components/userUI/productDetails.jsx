@@ -16,7 +16,7 @@ export default function ProductDetails() {
 
   const fetchProduct = async () => {
     try {
-      const res = await axios.get("http://localhost:8050/api/admin/products");
+      const res = await axios.get("https://api-ecommerce-2.onrender.com/api/admin/products");
       if (res.data.status && res.data.products) {
         const foundProduct = res.data.products.find(p => p._id === id);
         console.log("Found product:", foundProduct);
@@ -71,7 +71,7 @@ export default function ProductDetails() {
       if (isInWishlist) {
         // Remove from wishlist
         await axios.delete(
-          `http://localhost:8050/api/user/wishlist/${id}`,
+          `https://api-ecommerce-2.onrender.com/api/user/wishlist/${id}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setIsInWishlist(false);
@@ -79,7 +79,7 @@ export default function ProductDetails() {
       } else {
         // Add to wishlist
         await axios.post(
-          "http://localhost:8050/api/user/wishlist",
+          "https://api-ecommerce-2.onrender.com/api/user/wishlist",
           { productId: id },
           { headers: { Authorization: `Bearer ${token}` } }
         );

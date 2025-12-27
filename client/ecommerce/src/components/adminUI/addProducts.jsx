@@ -19,7 +19,7 @@ export default function AdminAddProduct() {
     // Fetch available categories
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:8050/api/admin/viewCategory");
+        const res = await axios.get("https://api-ecommerce-2.onrender.com/api/admin/viewCategory");
         if (res.data.status && res.data.data) {
           setCategories(res.data.data);
         }
@@ -36,7 +36,7 @@ export default function AdminAddProduct() {
     e.preventDefault();
     setSaving(true);
     try {
-      const response = await axios.post("http://localhost:8050/api/admin/products", {
+      const response = await axios.post("http://api-ecommerce-2.onrender.com/api/admin/products", {
         pname: form.pname,
         desc: form.desc,
         price: parseFloat(form.price) || 0,

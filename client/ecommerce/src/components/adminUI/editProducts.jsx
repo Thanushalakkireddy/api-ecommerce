@@ -24,7 +24,7 @@ export default function EditProducts() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:8050/api/admin/products");
+      const res = await axios.get("http://api-ecommerce-2.onrender.com/api/admin/products");
       if (res.data.status && res.data.products) {
         setProducts(res.data.products);
       }
@@ -38,7 +38,7 @@ export default function EditProducts() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:8050/api/admin/viewCategory");
+      const res = await axios.get("http://api-ecommerce-2.onrender.com/api/admin/viewCategory");
       if (res.data.status && res.data.data) {
         setCategories(res.data.data);
       }
@@ -75,7 +75,7 @@ export default function EditProducts() {
     e.preventDefault();
     try {
       const response = await axios.patch(
-        `http://localhost:8050/api/admin/editProducts/${editingProduct}`,
+        `http://api-ecommerce-2.onrender.com/api/admin/editProducts/${editingProduct}`,
         form
       );
 
@@ -99,7 +99,7 @@ export default function EditProducts() {
 
     try {
       const response = await axios.post(
-        `http://localhost:8050/api/admin/deleteProduct/${productId}`
+        `https://api-ecommerce-2.onrender.com/api/admin/deleteProduct/${productId}`
       );
 
       if (response.data.status) {

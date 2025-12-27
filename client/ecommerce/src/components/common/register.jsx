@@ -21,7 +21,7 @@ export default function Register() {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        'http://localhost:8050/api/user/register',
+        'https://api-ecommerce-2.onrender.com/api/user/register',
         {
           name: formData.username,
           email: formData.email,

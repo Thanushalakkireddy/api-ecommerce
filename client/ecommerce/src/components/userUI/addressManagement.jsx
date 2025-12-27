@@ -31,7 +31,7 @@ export default function AddressManagement() {
         return;
       }
 
-      const res = await axios.get("http://localhost:8050/api/user/addresses", {
+      const res = await axios.get("http://api-ecommerce-2.onrender.com/api/user/addresses", {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -53,7 +53,7 @@ export default function AddressManagement() {
       if (editingId) {
         // Update existing address
         const res = await axios.put(
-          `http://localhost:8050/api/user/addresses/${editingId}`,
+          `http://api-ecommerce-2.onrender.com/api/user/addresses/${editingId}`,
           formData,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -64,7 +64,7 @@ export default function AddressManagement() {
       } else {
         // Add new address
         const res = await axios.post(
-          "http://localhost:8050/api/user/addresses",
+          "http://api-ecommerce-2.onrender.com/api/user/addresses",
           formData,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -104,7 +104,7 @@ export default function AddressManagement() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.delete(
-        `http://localhost:8050/api/user/addresses/${id}`,
+        `http://api-ecommerce-2.onrender.com/api/user/addresses/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
