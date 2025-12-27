@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "cd ecommerce && npm run dev",
+    "build": "cd ecommerce && npm run build",
+    "lint": "cd ecommerce && npm run lint",
+    "preview": "cd ecommerce && npm run preview"
+  },
+  "dependencies": {
+    "i": "^0.3.7"
+  }
+}
