@@ -20,7 +20,7 @@ export default function Orders() {
         return;
       }
 
-      const res = await axios.get("https://api-ecommerce-2.onrender.com/api/user/orders", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/user/orders`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -45,7 +45,7 @@ export default function Orders() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.put(
-        `https://api-ecommerce-2.onrender.com/api/user/orders/${orderId}/cancel`,
+        `${import.meta.env.VITE_API_URL}/api/user/orders/${orderId}/cancel`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );

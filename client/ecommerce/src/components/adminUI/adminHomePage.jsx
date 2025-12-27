@@ -64,10 +64,10 @@ export default function AdminHomePage() {
   const fetchDashboardData = async () => {
     try {
       const [productsRes, categoriesRes] = await Promise.all([
-        axios.get("http://api-ecommerce-2.onrender.com/api/admin/products"),
-        axios.get("http://api-ecommerce-2.onrender.com/api/admin/viewCategory")
+        axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products`),
+        axios.get(`${import.meta.env.VITE_API_URL}/api/admin/viewCategory`),
       ]);
-
+    
       const productsData = productsRes.data.products || [];
       const categoriesData = categoriesRes.data.data || [];
 

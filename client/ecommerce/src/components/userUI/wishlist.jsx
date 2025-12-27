@@ -19,7 +19,7 @@ export default function Wishlist() {
         return;
       }
 
-      const res = await axios.get("https://api-ecommerce-2.onrender.com/api/user/wishlist", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/user/wishlist`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -40,7 +40,7 @@ export default function Wishlist() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.delete(
-        `https://api-ecommerce-2.onrender.com/api/user/wishlist/${productId}`,
+        `${import.meta.env.VITE_API_URL}/api/user/wishlist/${productId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

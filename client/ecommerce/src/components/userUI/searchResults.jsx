@@ -26,7 +26,7 @@ export default function SearchResults() {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("https://api-ecommerce-2.onrender.com/api/admin/products");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products`);
       if (res.data.status && res.data.products) {
         setProducts(res.data.products);
       }

@@ -17,7 +17,7 @@ export default function AddCategories() {
 
     setSaving(true);
     try {
-      const response = await axios.post("http://api-ecommerce-2.onrender.com/api/admin/category", {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/admin/category`, {
         name: categoryName.trim()
       });
 

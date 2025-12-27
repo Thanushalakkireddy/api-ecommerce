@@ -13,7 +13,7 @@ export default function ViewUsers() {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://api-ecommerce-2.onrender.com/api/admin/allUsers");
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/admin/allUsers`);
       if (res.data.status && res.data.data) {
         setUsers(res.data.data);
       }

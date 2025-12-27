@@ -21,7 +21,7 @@ export default function Register() {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        'https://api-ecommerce-2.onrender.com/api/user/register',
+        `${import.meta.env.VITE_API_URL}/api/user/register`,
         {
           name: formData.username,
           email: formData.email,
