@@ -24,8 +24,8 @@ export default function CategoriesPage() {
   const fetchData = async () => {
     try {
       const [categoriesRes, productsRes] = await Promise.all([
-        axios.get("http://api-ecommerce-2.onrender.com/api/admin/viewCategory"),
-        axios.get("http://api-ecommerce-2.onrender.com/api/admin/products")
+        axios.get(`${import.meta.env.VITE_API_URL}/api/admin/viewCategory`),
+        axios.get(`${import.meta.env.VITE_API_URL}/api/admin/products`),
       ]);
 
       if (categoriesRes.data.status && categoriesRes.data.data) {
