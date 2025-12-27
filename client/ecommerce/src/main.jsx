@@ -6,8 +6,8 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter,Routes,Route, Link } from 'react-router-dom'
 import Header from './components/common/header.jsx';
 import MainContent from './components/common/mainContent.jsx';
-import Register from './components/common/Register.jsx';
-import HomePage from './components/common/HomePage.jsx';
+import Register from './components/common/register.jsx';
+import HomePage from './components/common/homePage.jsx';
 
 // User UI Components
 import UserHomePage from './components/userUI/userHomePage.jsx';
